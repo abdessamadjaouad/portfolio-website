@@ -1,0 +1,174 @@
+PROFILE APPROVALS
+
+Role order:
+Data Engineer first, Software Engineer second: YES
+
+Audience order:
+Recruiters, engineering managers, senior engineers: YES
+
+Public location:
+Casablanca, Morocco
+
+Availability:
+IMMEDIATELY
+
+Work arrangement:
+ON-SITE, HYBRID, REMOTE
+
+Public email:
+abdessamadjaouad0@gmail.com
+
+Public GitHub:
+https://github.com/abdessamadjaouad
+
+Public LinkedIn:
+https://linkedin.com/in/abdessamadjaouad
+
+Publish phone number:
++212679075431
+
+Preferred contact:
+Email first, Whatsapp second, LinkedIn third
+
+
+EXPERIENCE DETAILS
+
+DXC official title:
+Data & AI Engineer
+
+DXC employment type:
+INTERNSHIP
+
+JESA official title:
+Software Engineer & Data Scientist
+
+JESA employment type:
+INTERNSHIP
+
+OCP official title:
+Full Stack Developer
+
+OCP employment type:
+INTERNSHIP
+
+
+PROJECT ORDER
+
+1. AI Sandbox
+2. CentralGIS
+3. OCP workforce management platform
+
+Approve this order:
+YES
+
+
+METRIC APPROVALS
+
+CentralGIS reduced data access time by 40%:
+YES
+
+JESA reduced EIA parameters from 52 to 38:
+YES
+
+This represents a 27% reduction:
+YES
+
+JESA result maintained at least 95% accuracy:
+YES
+
+OCP backend performance improved by 30%:
+YES
+
+
+PUBLICATION PERMISSIONS
+
+AI Sandbox public case study:
+NO
+
+CentralGIS public case study:
+NO
+
+OCP platform public case study:
+NO
+
+Public employer source code:
+NO
+
+Public internal company data:
+NO
+
+Public internal screenshots:
+NO
+
+Recreated and sanitized diagrams:
+YES
+
+
+PROJECT LINKS
+
+AI Sandbox GitHub:
+NONE
+
+AI Sandbox live demo:
+https://drive.google.com/file/d/1X_ZUPbCexk1lhhoLiXf3UFmJxcLEm3jJ/view?usp=sharing
+
+CentralGIS GitHub:
+NONE
+
+CentralGIS live demo:
+https://drive.google.com/file/d/1X_ZUPbCexk1lhhoLiXf3UFmJxcLEm3jJ/view?usp=sharing
+
+OCP project GitHub:
+NONE
+
+Other relevant GitHub projects:
+NONE
+
+
+PROJECT MEDIA
+
+AI Sandbox screenshots:
+NONE
+
+CentralGIS screenshots:
+NONE
+
+OCP platform screenshots:
+NONE
+
+Architecture diagrams:
+NONE
+
+Demo videos:
+https://drive.google.com/file/d/1X_ZUPbCexk1lhhoLiXf3UFmJxcLEm3jJ/view?usp=sharing
+
+
+IEEE PUBLICATION
+
+Title:
+Reducing PQC Overhead in IoT Networks Using an Epoch-Based Compression Approach
+
+IEEE link:
+https://ieeexplore.ieee.org/document/11601673
+
+Complete citation or BibTeX:
+P. W. Shor, "Algorithms for quantum computation: discrete logarithms and factoring," Proceedings 35th Annual Symposium on Foundations of Computer Science, Santa Fe, NM, USA, 1994, pp. 124-134, doi: 10.1109/SFCS.1994.365700. keywords: {Quantum computing;Quantum mechanics;Polynomials;Computational modeling;Physics computing;Computer simulation;Costs;Mechanical factors;Cryptography;Circuit simulation},
+
+J. Lopez, V. Cadena and M. S. Rahman, "Evaluating Post-Quantum Cryptographic Algorithms on Resource-Constrained Devices," 2025 IEEE International Conference on Quantum Computing and Engineering (QCE), Albuquerque, NM, USA, 2025, pp. 655-656, doi: 10.1109/QCE65121.2025.10492. keywords: {Performance evaluation;Quantum computing;Protocols;Power demand;Scalability;Memory management;Libraries;Internet of Things;Cryptography;Next generation networking;Post-Quantum Cryptography;Constrained De-vices;IoT Security;Quantum-Secure Communication},
+
+M. Mosca, "Cybersecurity in an Era with Quantum Computers: Will We Be Ready?," in IEEE Security & Privacy, vol. 16, no. 5, pp. 38-41, September/October 2018, doi: 10.1109/MSP.2018.3761723.
+keywords: {Cryptography;Quantum computing;Fault tolerance;Fault tolerant systems;security;cryptography;quantum computers},
+
+
+
+
+RESUME PUBLICATION
+
+English Data Engineer resume:
+PUBLIC
+
+English Software Engineer resume:
+PUBLIC
+
+French Data and AI resume:
+PRIVATE

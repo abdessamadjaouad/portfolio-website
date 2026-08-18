@@ -1,0 +1,4 @@
+interface:
+  display_name: "Portfolio R3F 3D"
+  short_description: "Build purposeful, resilient portfolio 3D"
+  default_prompt: "Use $portfolio-r3f-3d to design a purposeful, accessible React Three Fiber scene for this portfolio."
