@@ -329,7 +329,8 @@ or an unapproved dependency.
 
 ## 15. Approval status
 
-**Pending human review**
+**Approved by Jao on 2026-08-19**
 
-Phase 4 stops here. Phase 5 has not been started, prepared, or partially
-implemented.
+Jao approved the static recruiter experience and requested that the reviewed
+Phase 4 changes be committed and pushed. Later work proceeds only under its own
+phase boundary.
