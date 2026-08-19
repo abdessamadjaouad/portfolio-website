@@ -1,0 +1,218 @@
+.journeyLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(20rem, 4fr);
+  gap: clamp(var(--space-7), 7vw, var(--space-9));
+  margin-block-start: var(--space-8);
+}
+
+.columnHeading {
+  margin: 0;
+  padding-block-end: var(--space-4);
+  border-block-end: var(--border-thin) solid var(--color-structure);
+  color: var(--color-data-signal);
+  font: 700 var(--text-label) / 1.35 var(--font-technical);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.timeline,
+.educationList,
+.compactList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 1.125rem;
+  width: var(--border-thin);
+  background: var(--color-structure);
+  content: "";
+}
+
+.timelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: var(--space-5);
+  scroll-margin-block-start: 7rem;
+  padding-block: var(--space-6);
+  border-block-end: var(--border-thin) solid var(--color-structure);
+}
+
+.timelineIndex {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: var(--border-thin) solid var(--color-data-signal);
+  border-radius: 50%;
+  background: var(--color-canvas);
+  color: var(--color-data-signal);
+  font: 700 var(--text-label) / 1 var(--font-technical);
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.experienceHeader p,
+.experienceHeader h4,
+.experienceSummary {
+  margin: 0;
+}
+
+.experienceHeader p {
+  margin-block-end: var(--space-2);
+  color: var(--color-text-muted);
+  font: 700 var(--text-label) / 1.35 var(--font-technical);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.experienceHeader h4 {
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: var(--text-heading-sm);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.experienceSummary {
+  max-width: 66ch;
+  margin-block-start: var(--space-4);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.timelineMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-7);
+  margin: var(--space-5) 0 0;
+}
+
+.timelineMeta > div {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.timelineMeta dt {
+  color: var(--color-text-muted);
+  font: 700 var(--text-label) / 1.35 var(--font-technical);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timelineMeta dd {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--text-body-sm);
+  line-height: 1.45;
+}
+
+.backgroundColumn {
+  display: grid;
+  align-content: start;
+  gap: var(--space-7);
+}
+
+.educationList > li {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-5);
+  border-block-end: var(--border-thin) solid var(--color-structure);
+}
+
+.educationList h4,
+.educationList p {
+  margin: 0;
+}
+
+.educationList h4 {
+  color: var(--color-text);
+  font-size: var(--text-body);
+  line-height: 1.4;
+}
+
+.educationList p {
+  color: var(--color-text-muted);
+  font-size: var(--text-body-sm);
+  line-height: 1.5;
+}
+
+.educationList .educationYears {
+  color: var(--color-data-signal);
+  font: 700 var(--text-label) / 1.35 var(--font-technical);
+}
+
+.compactList {
+  border-block-end: var(--border-thin) solid var(--color-structure);
+}
+
+.compactList li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  align-items: baseline;
+  min-height: 3.5rem;
+  padding-block: var(--space-3);
+  border-block-start: var(--border-thin) solid var(--color-structure);
+}
+
+.compactList strong {
+  line-height: 1.4;
+}
+
+.compactList span {
+  color: var(--color-text-muted);
+  font: 600 var(--text-label) / 1.35 var(--font-technical);
+  text-align: end;
+}
+
+@media (max-width: 64rem) {
+  .journeyLayout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .backgroundColumn {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .backgroundColumn > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 34rem) {
+  .journeyLayout {
+    margin-block-start: var(--space-7);
+  }
+
+  .timelineItem {
+    gap: var(--space-4);
+  }
+
+  .experienceHeader {
+    display: grid;
+  }
+
+  .backgroundColumn {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .backgroundColumn > :first-child {
+    grid-column: auto;
+  }
+}
