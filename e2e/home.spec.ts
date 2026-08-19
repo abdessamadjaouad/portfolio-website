@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("renders the neutral portfolio foundation without browser errors", async ({
+test("renders the portfolio foundation without browser errors", async ({
   page,
 }) => {
   const browserErrors: string[] = [];
@@ -19,6 +19,10 @@ test("renders the neutral portfolio foundation without browser errors", async ({
   expect(response?.status()).toBe(200);
   expect(response?.headers()["x-powered-by"]).toBeUndefined();
   await expect(page).toHaveTitle("Abdessamad Jaouad | Data Engineer");
+  await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
+    "content",
+    "#071015",
+  );
   await expect(
     page.getByRole("heading", { level: 1, name: "Abdessamad Jaouad" }),
   ).toBeVisible();
@@ -32,5 +36,10 @@ test("renders the neutral portfolio foundation without browser errors", async ({
         document.documentElement.clientWidth,
     ),
   ).toBe(false);
+  expect(
+    await page.evaluate(
+      () => getComputedStyle(document.documentElement).colorScheme,
+    ),
+  ).toBe("dark");
   expect(browserErrors).toEqual([]);
 });

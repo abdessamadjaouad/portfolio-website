@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 import "./globals.css";
@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Abdessamad Jaouad | Data Engineer",
   description:
     "Portfolio of Abdessamad Jaouad, a Data Engineer and Software Engineer based in Casablanca, Morocco.",
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#071015",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
