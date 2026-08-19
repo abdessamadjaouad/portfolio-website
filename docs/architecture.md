@@ -1,6 +1,7 @@
 # Systems Atlas initial architecture
 
-Status: Proposed Phase 0 architecture; no application has been initialized.
+Status: Approved in Phase 0; Phase 1 initialized the application and Phase 3
+implemented the typed content boundary.
 
 ## Objective
 
@@ -44,11 +45,11 @@ authentication, account, analytics, tracking, or runtime GitHub request.
 
 ## Proposed public surface
 
-| Surface | Purpose | Phase 0 status |
+| Surface | Purpose | Current status |
 | --- | --- | --- |
 | `/` | Recruiter-first homepage and all required public content | Approved product boundary; implementation deferred |
-| `/resumes/abdessamad-jaouad-data-engineer.pdf` | Reviewed English Data Engineer resume | Target approved; PDF pending |
-| `/resumes/abdessamad-jaouad-software-engineer.pdf` | Reviewed English Software Engineer resume | Target approved; PDF pending |
+| `/resumes/abdessamad-jaouad-data-engineer.pdf` | Reviewed English Data Engineer resume | Present and validated in Phase 3 |
+| `/resumes/abdessamad-jaouad-software-engineer.pdf` | Reviewed English Software Engineer resume | Present and validated in Phase 3 |
 | `/sitemap.xml` | Canonical public route discovery | Later SEO phase |
 | `/robots.txt` | Crawler guidance | Later SEO phase |
 | Social image output | Link-preview evidence and identity | Later SEO phase |
@@ -169,7 +170,7 @@ runtime exists.
 | Shared-link misattribution | Drive URL remains blocked pending ownership approval |
 | Invented research metadata | Publish title/link only; keep `TODO_CONTENT_IEEE_CITATION` |
 | Unverified metric amplification | Allow only the four approved results and record evidence limits |
-| Missing resume publication assets | Keep `TODO_CONTENT_REVIEWED_ENGLISH_RESUME_PDFS` until full review |
+| Resume publication assets | Resolved in Phase 3 with two corrected, reviewed, validated public PDFs |
 | Client-side failure | Semantic server-rendered baseline with no required JavaScript |
 
 ## Deferred decisions

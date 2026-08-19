@@ -1,7 +1,7 @@
 # Systems Atlas project asset folder plan
 
-Status: Proposed in Phase 0. This document creates no asset directories or
-public files.
+Status: Approved in Phase 0; resume asset status updated in Phase 3 on
+2026-08-19.
 
 ## Goals
 
@@ -124,8 +124,10 @@ Before either PDF is added, verify:
 - Visual rendering is complete and legible.
 - No private path, author metadata, comment, or hidden attachment is exposed.
 
-`TODO_CONTENT_REVIEWED_ENGLISH_RESUME_PDFS` is unresolved. No `.tex` source and
-no French resume may enter `public/`.
+`TODO_CONTENT_REVIEWED_ENGLISH_RESUME_PDFS` is resolved. Both approved PDF
+targets are present and passed visual, selectable-text, embedded-link,
+approved-fact, metadata, structure, linearization, and public-path checks. No
+`.tex` source and no French resume entered `public/`.
 
 ## Image and diagram assets
 

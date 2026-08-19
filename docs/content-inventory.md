@@ -1,6 +1,7 @@
 # Systems Atlas content inventory
 
-Status: Proposed in Phase 0; authoritative only after human approval.
+Status: Approved in Phase 0; resume publication status updated in Phase 3 on
+2026-08-19.
 
 ## Evidence legend
 
@@ -312,19 +313,21 @@ the future site still depends on evidence strength and role relevance.
 | LinkedIn | Approved: `https://linkedin.com/in/abdessamadjaouad` |
 | GitHub profile | Approved: `https://github.com/abdessamadjaouad` |
 | IEEE paper | Approved: `https://ieeexplore.ieee.org/document/11601673` |
-| Data Engineer resume | Target path approved; reviewed PDF not supplied |
-| Software Engineer resume | Target path approved; reviewed PDF not supplied |
+| Data Engineer resume | Reviewed PDF present at the approved public path |
+| Software Engineer resume | Reviewed PDF present at the approved public path |
 | Employer repositories | Unavailable and excluded unless independently approved for publication |
 | Shared Google Drive URL | Blocked; do not fetch or publish pending owner identification and explicit approval |
 | Personal-project repositories/demos/reports | Not supplied; tracked by project-specific `TODO_CONTENT_*_PUBLIC_LINKS` markers |
 
-Approved future resume paths:
+Approved public resume paths:
 
 - `public/resumes/abdessamad-jaouad-data-engineer.pdf`
 - `public/resumes/abdessamad-jaouad-software-engineer.pdf`
 
-Both files are currently absent. `TODO_CONTENT_REVIEWED_ENGLISH_RESUME_PDFS`
-must be resolved before publication.
+Both files are present. Phase 3 verified their visual rendering, selectable
+text, embedded links, approved email, official titles, internship type,
+metadata, PDF structure, and direct HTTP responses. The historical
+`TODO_CONTENT_REVIEWED_ENGLISH_RESUME_PDFS` gap is resolved.
 
 ## Current asset inventory
 
@@ -333,7 +336,7 @@ must be resolved before publication.
 | English Data Engineer `.tex` | Present as a private input | Never publish |
 | English Software Engineer `.tex` | Present as a private input | Never publish |
 | French Data and AI `.tex` | Present as private reference material | Never copy, compile, link, index, or publish |
-| Reviewed English resume PDFs | Not supplied | Required later at approved paths |
+| Reviewed English resume PDFs | Present | Approved at both public paths in Phase 3 |
 | Project screenshots | None supplied | Pending project-specific review |
 | Architecture diagrams | None supplied | Sanitized recreations may be proposed later |
 | Short videos/posters | None supplied | Shared URL blocked; autoplay is prohibited |
@@ -362,16 +365,20 @@ must be resolved before publication.
 
 ## Content gap report
 
+### Resolved in Phase 3
+
+`TODO_CONTENT_REVIEWED_ENGLISH_RESUME_PDFS` is resolved. Both corrected English
+PDFs passed visual, selectable-text, link, approved-fact, metadata, structure,
+and public-path checks. The private English source files were not published,
+and the private French source was not used or compiled for this output.
+
 ### Required before the relevant Version 1 feature ships
 
-1. `TODO_CONTENT_REVIEWED_ENGLISH_RESUME_PDFS` — provide both corrected English
-   PDFs and verify appearance, selectable text, links, approved email, and
-   official titles.
-2. `TODO_CONTENT_SHARED_DRIVE_OWNERSHIP` — identify the owner and intended asset
+1. `TODO_CONTENT_SHARED_DRIVE_OWNERSHIP` — identify the owner and intended asset
    for the reused Drive URL, then explicitly approve or reject public linking.
-3. `TODO_CONTENT_IEEE_CITATION` — provide an exact IEEE export or BibTeX if a
+2. `TODO_CONTENT_IEEE_CITATION` — provide an exact IEEE export or BibTeX if a
    full citation is desired; otherwise publish title and link only.
-4. `TODO_CONTENT_DEDICATED_DATA_ENGINEERING_CASE_STUDY` — supply a complete,
+3. `TODO_CONTENT_DEDICATED_DATA_ENGINEERING_CASE_STUDY` — supply a complete,
    public, evidence-backed project before treating one as a deep case study.
 
 ### Evidence strengthening, not permission to invent
