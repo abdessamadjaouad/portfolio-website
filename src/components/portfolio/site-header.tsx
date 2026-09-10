@@ -6,22 +6,28 @@ import styles from "./homepage.module.css";
 type SiteHeaderProps = {
   profile: Profile;
   emailLink: Link;
+  homeHref?: string;
 };
 
 const navigationItems = [
   { href: "#work", label: "Work" },
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
+  { href: "/projects", label: "Projects" },
 ] as const;
 
-export function SiteHeader({ profile, emailLink }: SiteHeaderProps) {
+export function SiteHeader({
+  profile,
+  emailLink,
+  homeHref = "",
+}: SiteHeaderProps) {
   return (
     <header className={styles.siteHeader}>
       <Container>
         <nav className={styles.navigation} aria-label="Primary navigation">
           <a
             className={styles.brand}
-            href="#top"
+            href={`${homeHref}#top`}
             aria-label={`${profile.name}, back to the top`}
           >
             <span className={styles.brandMark} aria-hidden="true">
@@ -33,7 +39,14 @@ export function SiteHeader({ profile, emailLink }: SiteHeaderProps) {
           <ul className={styles.navigationList}>
             {navigationItems.map((item) => (
               <li key={item.href}>
-                <a className={styles.navigationLink} href={item.href}>
+                <a
+                  className={styles.navigationLink}
+                  href={
+                    item.href.startsWith("#")
+                      ? `${homeHref}${item.href}`
+                      : item.href
+                  }
+                >
                   {item.label}
                 </a>
               </li>

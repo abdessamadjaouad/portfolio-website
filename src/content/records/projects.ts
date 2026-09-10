@@ -7,7 +7,7 @@ export const projects = [
     order: 1,
     title: "AI Sandbox",
     category: "employer-highlight",
-    publicDepth: "concise-highlight",
+    publicDepth: "case-study",
     featured: true,
     experienceId: "dxc-technology-morocco",
     context:
@@ -100,7 +100,7 @@ export const projects = [
     order: 2,
     title: "CentralGIS",
     category: "employer-highlight",
-    publicDepth: "concise-highlight",
+    publicDepth: "case-study",
     featured: true,
     experienceId: "jesa",
     context:
@@ -181,7 +181,7 @@ export const projects = [
     order: 3,
     title: "OCP workforce management platform",
     category: "employer-highlight",
-    publicDepth: "concise-highlight",
+    publicDepth: "case-study",
     featured: true,
     experienceId: "ocp-group",
     context:
@@ -264,7 +264,7 @@ export const projects = [
     order: 4,
     title: "JESA Environmental Impact Assessment input reduction",
     category: "employer-result",
-    publicDepth: "supporting-result",
+    publicDepth: "case-study",
     featured: false,
     experienceId: "jesa",
     context:
@@ -337,7 +337,7 @@ export const projects = [
     order: 10,
     title: "Real-Time ETL Pipeline — Stock Market",
     category: "personal-project",
-    publicDepth: "concise-card",
+    publicDepth: "case-study",
     featured: false,
     year: 2025,
     context: "Resume-backed personal data-engineering project.",
@@ -393,7 +393,7 @@ export const projects = [
       ],
     },
     outcome:
-      "An end-to-end, containerized pipeline and dashboard flow was implemented; no numeric result is approved.",
+      "An end-to-end, containerized pipeline and dashboard flow was implemented.",
     metricIds: [],
     technologies: [
       "Kafka",
@@ -422,7 +422,7 @@ export const projects = [
     order: 11,
     title: "Data Quality & KPI Dashboard",
     category: "personal-project",
-    publicDepth: "concise-card",
+    publicDepth: "case-study",
     featured: false,
     year: 2025,
     context: "Resume-backed personal data-engineering and analytics project.",
@@ -467,7 +467,7 @@ export const projects = [
       flow: ["staging", "quality-rules", "warehouse", "quality-dashboard"],
     },
     outcome:
-      "Completeness, consistency, and data-quality indicators are represented in dashboards; no numeric result is approved.",
+      "Completeness, consistency, and data-quality indicators are represented in dashboards.",
     metricIds: [],
     technologies: ["CSV", "PostgreSQL", "SQL", "OLAP", "Power BI", "DAX"],
     linkIds: [],
@@ -487,7 +487,7 @@ export const projects = [
     order: 12,
     title: "Multi-Label Classification — Legal Texts",
     category: "personal-project",
-    publicDepth: "concise-card",
+    publicDepth: "case-study",
     featured: false,
     year: 2024,
     context: "Resume-backed personal machine-learning project.",
@@ -536,7 +536,7 @@ export const projects = [
       ],
     },
     outcome:
-      "A complete classification and evaluation pipeline was implemented; no score is approved.",
+      "A complete classification and evaluation pipeline was implemented.",
     metricIds: [],
     technologies: [
       "BERT",
@@ -561,7 +561,7 @@ export const projects = [
     order: 13,
     title: "Healthics — Full-Stack Medical Platform",
     category: "personal-project",
-    publicDepth: "concise-card",
+    publicDepth: "case-study",
     featured: false,
     year: 2024,
     context: "Resume-backed personal software-engineering project.",
@@ -601,7 +601,7 @@ export const projects = [
       flow: ["interface", "application-api", "distributed-processing"],
     },
     outcome:
-      "A full-stack platform, distributed processing design, dashboard, and chatbot were implemented; no numeric result is approved.",
+      "A full-stack platform, distributed processing design, dashboard, and chatbot were implemented.",
     metricIds: [],
     technologies: [
       "React",

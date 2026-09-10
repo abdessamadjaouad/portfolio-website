@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/layout/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { ProjectCardShell } from "@/components/ui/project-card-shell";
+import { TextLink } from "@/components/ui/text-link";
 import type { Experience, Metric, Project } from "@/content/schemas";
 
 import styles from "./homepage.module.css";
@@ -108,6 +109,10 @@ function ProjectEvidence({
           <li key={technology}>{technology}</li>
         ))}
       </ul>
+      <TextLink href={`/projects/${project.slug}`}>
+        Explore {project.title}
+        <span aria-hidden="true"> ↗</span>
+      </TextLink>
     </ProjectCardShell>
   );
 }
@@ -140,7 +145,7 @@ export function WorkSection({
           id="work-heading"
           eyebrow="01 / Selected evidence"
           title="Work that connects data to production."
-          description="Resume-backed contributions, official internship context, and only approved results. Employer work stays intentionally concise."
+          description="Data platforms, production software, and the engineering behind them. Explore the problem, my contribution, and the results."
         />
 
         {featuredProjects.length > 0 ? (

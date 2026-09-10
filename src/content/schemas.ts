@@ -308,6 +308,7 @@ export const projectSchema = z
       "concise-highlight",
       "supporting-result",
       "concise-card",
+      "case-study",
     ]),
     featured: z.boolean(),
     year: z.int().min(2000).max(2100).optional(),
@@ -332,7 +333,10 @@ export const projectSchema = z
       "personal-project": "concise-card",
     }[project.category];
 
-    if (project.publicDepth !== expectedDepth) {
+    if (
+      project.publicDepth !== expectedDepth &&
+      project.publicDepth !== "case-study"
+    ) {
       context.addIssue({
         code: "custom",
         path: ["publicDepth"],
