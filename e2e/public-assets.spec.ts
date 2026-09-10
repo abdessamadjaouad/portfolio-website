@@ -16,3 +16,21 @@ for (const resumePath of resumePaths) {
     );
   });
 }
+
+test("keeps private inputs, configuration and backend routes unavailable", async ({
+  request,
+}) => {
+  for (const path of [
+    "/private-inputs/cv/new-cv.tex",
+    "/resumes/new-cv.tex",
+    "/.env",
+    "/.git/config",
+    "/api/contact",
+  ]) {
+    const response = await request.get(path);
+    expect(response.status()).toBe(404);
+    expect(await response.text()).not.toMatch(
+      /BEGIN (RSA |OPENSSH )?PRIVATE KEY|\\documentclass/,
+    );
+  }
+});

@@ -96,9 +96,7 @@ test("renders the complete recruiter homepage without browser errors", async ({
   expect(browserErrors).toEqual([]);
 });
 
-test("supports skip navigation, logical keyboard order, and visible focus", async ({
-  page,
-}) => {
+test("supports skip navigation", async ({ page }) => {
   await page.goto("/");
 
   const skipLink = page.getByRole("link", { name: "Skip to main content" });
@@ -106,8 +104,11 @@ test("supports skip navigation, logical keyboard order, and visible focus", asyn
   await expect(skipLink).toBeFocused();
   await page.keyboard.press("Enter");
   await expect(page.getByRole("main")).toBeFocused();
+});
 
-  await page.reload();
+test("supports logical keyboard order and visible focus", async ({ page }) => {
+  await page.goto("/");
+  const skipLink = page.getByRole("link", { name: "Skip to main content" });
   const orderedLinks = [
     skipLink,
     page.getByRole("link", {
@@ -116,6 +117,9 @@ test("supports skip navigation, logical keyboard order, and visible focus", asyn
     page.getByRole("link", { name: "Work", exact: true }),
     page.getByRole("link", { name: "Skills", exact: true }),
     page.getByRole("link", { name: "Experience", exact: true }),
+    page
+      .getByRole("navigation", { name: "Primary navigation" })
+      .getByRole("link", { name: "Projects", exact: true }),
     page.getByRole("link", { name: "Email", exact: true }).first(),
     page.getByRole("link", { name: "Data Engineer resume", exact: true }),
     page.getByRole("link", { name: "Email Abdessamad", exact: true }).first(),
@@ -210,7 +214,7 @@ test("exposes both reviewed resume downloads", async ({ page, request }) => {
 
 test("reflows without horizontal overflow at approved widths and zoom equivalent", async ({
   page,
-}) => {
+}, testInfo) => {
   const viewports = [
     { width: 320, height: 800 },
     { width: 375, height: 812 },
@@ -239,6 +243,16 @@ test("reflows without horizontal overflow at approved widths and zoom equivalent
           document.documentElement.clientWidth,
       ),
     ).toBe(false);
+    if (
+      testInfo.project.name === "chromium" &&
+      [375, 768, 1440, 1920].includes(viewport.width)
+    ) {
+      await page.screenshot({
+        path: testInfo.outputPath(`home-${viewport.width}.png`),
+        fullPage: true,
+        animations: "disabled",
+      });
+    }
   }
 });
 
