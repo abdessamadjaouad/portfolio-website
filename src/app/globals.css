@@ -85,6 +85,7 @@
 html {
   min-width: 320px;
   scroll-padding-block-start: 7rem;
+  scroll-padding-block-end: 5rem;
   background: var(--color-canvas);
 }
 
@@ -95,6 +96,27 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   text-rendering: optimizeLegibility;
+}
+
+main:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: calc(-1 * var(--focus-width));
+}
+[id^="project-"],
+[id^="experience-"],
+[id$="-heading"] {
+  scroll-margin-block-start: 8rem;
+}
+[id^="project-"]:target,
+[id^="experience-"]:target {
+  outline: 2px solid var(--color-data-signal);
+  outline-offset: 6px;
+}
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+footer {
+  padding-bottom: 5rem;
 }
 
 ::selection {

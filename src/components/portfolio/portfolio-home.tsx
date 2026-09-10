@@ -1,4 +1,5 @@
 import { SkipLink } from "@/components/ui/skip-link";
+import { SignalFlow } from "@/components/motion/signal-flow";
 
 import { AboutSection } from "./about-section";
 import { ContactSection } from "./contact-section";
@@ -31,6 +32,7 @@ export function PortfolioHome() {
           metrics={homepageContent.metrics}
           projects={homepageContent.projects}
         />
+        <SignalFlow />
         <WorkSection
           projects={homepageContent.projects}
           experiences={homepageContent.experiences}
