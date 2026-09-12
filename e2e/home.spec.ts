@@ -139,7 +139,10 @@ test("supports logical keyboard order and visible focus", async ({ page }) => {
   }
 
   await page.keyboard.press("Tab");
-  if (await headerEmail.isFocused()) {
+  const headerEmailFocused = await headerEmail.evaluate(
+    (element) => element === document.activeElement,
+  );
+  if (headerEmailFocused) {
     await expect(headerEmail).toBeFocused();
     await page.keyboard.press("Tab");
   }
