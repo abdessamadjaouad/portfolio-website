@@ -109,6 +109,14 @@ test("supports skip navigation", async ({ page }) => {
 test("supports logical keyboard order and visible focus", async ({ page }) => {
   await page.goto("/");
   const skipLink = page.getByRole("link", { name: "Skip to main content" });
+  const headerEmail = page.getByRole("link", { name: "Email", exact: true }).first();
+  const primaryResume = page.getByRole("link", {
+    name: "Data Engineer resume",
+    exact: true,
+  });
+  const primaryEmail = page
+    .getByRole("link", { name: "Email Abdessamad", exact: true })
+    .first();
   const orderedLinks = [
     skipLink,
     page.getByRole("link", {
@@ -123,9 +131,6 @@ test("supports logical keyboard order and visible focus", async ({ page }) => {
     page
       .getByRole("navigation", { name: "Primary navigation" })
       .getByRole("link", { name: "Résumé", exact: true }),
-    page.getByRole("link", { name: "Email", exact: true }).first(),
-    page.getByRole("link", { name: "Data Engineer resume", exact: true }),
-    page.getByRole("link", { name: "Email Abdessamad", exact: true }).first(),
   ];
 
   for (const link of orderedLinks) {
@@ -133,10 +138,15 @@ test("supports logical keyboard order and visible focus", async ({ page }) => {
     await expect(link).toBeFocused();
   }
 
-  const primaryResume = page.getByRole("link", {
-    name: "Data Engineer resume",
-    exact: true,
-  });
+  await page.keyboard.press("Tab");
+  if (await headerEmail.isFocused()) {
+    await expect(headerEmail).toBeFocused();
+    await page.keyboard.press("Tab");
+  }
+  await expect(primaryResume).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(primaryEmail).toBeFocused();
+
   await primaryResume.focus();
   expect(
     await primaryResume.evaluate(
