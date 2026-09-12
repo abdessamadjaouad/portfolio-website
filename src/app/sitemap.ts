@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     "/projects",
     "/about",
+    "/resume",
     "/research",
     ...caseStudies.map(({ slug }) => `/projects/${slug}`),
   ].map((path) => ({ url: new URL(path, siteOrigin).href }));

@@ -8,6 +8,11 @@ export function SiteTools() {
       actions={[
         { label: "Home", href: "/", keywords: "overview profile" },
         {
+          label: "Résumé",
+          href: "/resume",
+          keywords: "resume cv photo experience profile",
+        },
+        {
           label: "All projects",
           href: "/projects",
           keywords: "work case studies",

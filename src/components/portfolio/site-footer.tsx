@@ -24,6 +24,7 @@ export function SiteFooter({ profile, emailLink }: SiteFooterProps) {
         </p>
         <nav aria-label="Footer navigation">
           <TextLink href="/projects">Projects</TextLink>
+          <TextLink href="/resume">Résumé</TextLink>
           <TextLink href="/about">About</TextLink>
           <TextLink href="/research">Research</TextLink>
           <a href={emailLink.href}>Email</a>

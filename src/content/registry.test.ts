@@ -149,9 +149,13 @@ describe("portfolio content registry", () => {
   it("finds every declared public asset and rejects a broken public root", () => {
     const result = validatePublicAssets();
     expect(result).toMatchObject({
-      declaredAssetCount: 2,
-      governedFileCount: 2,
+      declaredAssetCount: 6,
+      governedFileCount: 6,
       checkedPaths: [
+        "/images/dxc-logo.webp",
+        "/images/jesa-logo.webp",
+        "/images/ocp-logo.webp",
+        "/images/abdessamad-jaouad.webp",
         "/resumes/abdessamad-jaouad-data-engineer.pdf",
         "/resumes/abdessamad-jaouad-software-engineer.pdf",
       ],

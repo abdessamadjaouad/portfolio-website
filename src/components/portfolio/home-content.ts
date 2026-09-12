@@ -17,6 +17,10 @@ const mediaById = new Map(
 
 export const homepageContent = {
   profile: portfolioContent.profile,
+  portrait: requireRecord(
+    mediaById.get("profile-portrait"),
+    "profile portrait",
+  ),
   contactLinks: portfolioContent.profile.contactLinkIds.map((linkId) =>
     requireRecord(linksById.get(linkId), `contact link ${linkId}`),
   ),
@@ -31,6 +35,9 @@ export const homepageContent = {
     ).publicPath,
   })),
   experiences: portfolioContent.experiences,
+  employerLogos: portfolioContent.media.filter((asset) =>
+    asset.subjectRef.startsWith("experience:"),
+  ),
   metrics: portfolioContent.metrics,
   projects: portfolioContent.projects,
   research: {

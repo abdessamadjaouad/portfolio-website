@@ -14,6 +14,7 @@ const navigationItems = [
   { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "/projects", label: "Projects" },
+  { href: "/resume", label: "Résumé" },
 ] as const;
 
 export function SiteHeader({
