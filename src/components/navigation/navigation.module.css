@@ -1,0 +1,113 @@
+.launcher {
+  position: fixed;
+  inset-block-end: max(var(--space-4), env(safe-area-inset-bottom));
+  inset-inline-end: max(var(--space-4), env(safe-area-inset-right));
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 44px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-structure);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  box-shadow: var(--shadow-raised);
+  font: inherit;
+}
+.launcher kbd {
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+}
+.dialog {
+  margin: auto;
+  width: min(38rem, calc(100vw - 2rem));
+  max-height: min(80dvh, 45rem);
+  padding: var(--space-5);
+  border: 1px solid var(--color-structure);
+  border-radius: var(--radius-panel);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-raised);
+  overscroll-behavior: contain;
+}
+.dialog::backdrop {
+  background: oklch(8% 0.02 232 / 82%);
+}
+.dialogHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.dialog h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.dialog button {
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-structure);
+  border-radius: var(--radius-control);
+  font: inherit;
+  cursor: pointer;
+}
+.dialog label {
+  display: block;
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin-block: var(--space-5) var(--space-3);
+}
+.dialog input {
+  width: 100%;
+  min-height: 48px;
+  font: inherit;
+  padding: var(--space-3);
+  background: var(--color-canvas);
+  border: 1px solid var(--color-structure);
+  color: var(--color-text);
+  border-radius: var(--radius-control);
+}
+.dialog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.dialog li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 44px;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-3);
+  border-radius: var(--radius-control);
+  overflow-wrap: anywhere;
+}
+.dialog li a:is(:hover, :focus-visible) {
+  background: var(--color-surface-raised);
+  color: var(--color-data-signal);
+}
+.count {
+  margin-block: var(--space-3);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+}
+@media (hover: hover) {
+  .launcher:hover,
+  .dialog button:hover {
+    background: var(--color-surface-raised);
+    border-color: var(--color-data-signal);
+  }
+}
+@media (max-width: 30rem) {
+  .launcher kbd {
+    display: none;
+  }
+}

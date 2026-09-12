@@ -1,0 +1,264 @@
+.button,
+.buttonLink,
+.textLink {
+  touch-action: manipulation;
+}
+
+.button,
+.buttonLink {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-thin) solid transparent;
+  border-radius: var(--radius-control);
+  font: 700 var(--text-body-sm) / 1 var(--font-body);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: var(--motion-duration-fast);
+  transition-property: color, background-color, border-color;
+  transition-timing-function: var(--motion-ease-direct);
+}
+
+.buttonPrimary {
+  border-color: var(--color-data-signal);
+  background: var(--color-data-signal);
+  color: var(--color-on-data-signal);
+}
+
+.buttonSecondary {
+  border-color: var(--color-structure);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.button:disabled,
+.buttonLink[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.buttonPrimary:active {
+  border-color: var(--color-text-muted);
+  background: var(--color-text-muted);
+}
+
+.buttonSecondary:active,
+.textLink:active {
+  color: var(--color-verified-signal);
+}
+
+.textLink {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration-color: var(--color-data-signal);
+  text-decoration-thickness: var(--border-strong);
+  text-underline-offset: var(--space-2);
+  transition-duration: var(--motion-duration-fast);
+  transition-property: color, text-decoration-color;
+  transition-timing-function: var(--motion-ease-direct);
+}
+
+@media (hover: hover) {
+  .buttonPrimary:hover {
+    border-color: var(--color-text);
+    background: var(--color-text);
+  }
+
+  .buttonSecondary:hover {
+    border-color: var(--color-data-signal);
+    color: var(--color-data-signal);
+  }
+
+  .textLink:hover {
+    color: var(--color-data-signal);
+    text-decoration-color: var(--color-text);
+  }
+}
+
+.badge {
+  display: inline-flex;
+  min-height: 1.75rem;
+  align-items: center;
+  width: fit-content;
+  padding-inline: var(--space-3);
+  border: var(--border-thin) solid var(--color-structure);
+  border-radius: 999px;
+  color: var(--color-data-signal);
+  font: 700 var(--text-label) / 1.2 var(--font-technical);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metric {
+  display: grid;
+  align-content: space-between;
+  gap: var(--space-5);
+  min-height: 14rem;
+  padding: var(--space-6);
+  border: var(--border-thin) solid var(--color-structure);
+  border-radius: var(--radius-panel);
+  background: var(--color-surface);
+}
+
+.metricValue,
+.metricLabel,
+.metricSource {
+  margin: 0;
+}
+
+.metricValue {
+  color: var(--color-verified-signal);
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.85;
+}
+
+.metricLabel {
+  max-width: 14ch;
+  color: var(--color-text);
+  font-size: var(--text-lead);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.metricSource {
+  color: var(--color-text-muted);
+  font: 600 var(--text-label) / 1.4 var(--font-technical);
+}
+
+.projectCard {
+  position: relative;
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  border: var(--border-thin) solid var(--color-structure);
+  border-radius: var(--radius-panel);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent) 7%, var(--color-surface)),
+    var(--color-surface) 60%
+  );
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.projectCard:focus-within {
+  border-color: var(--color-data-signal);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .projectCard {
+    transition:
+      transform 350ms var(--motion-ease-direct),
+      border-color 200ms ease;
+  }
+  .buttonLink {
+    transition:
+      transform 220ms var(--motion-ease-direct),
+      color 140ms ease,
+      background-color 140ms ease,
+      border-color 140ms ease;
+  }
+  @media (hover: hover) {
+    .projectCard:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-accent);
+    }
+    .buttonLink:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.projectCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.projectCardEyebrow,
+.projectCardIndex {
+  color: var(--color-data-signal);
+  font: 700 var(--text-label) / 1.3 var(--font-technical);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.projectCardIndex {
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.architectureNode {
+  position: relative;
+  display: grid;
+  gap: var(--space-5);
+  min-height: 7rem;
+  padding: var(--space-4);
+  border: var(--border-thin) solid var(--color-structure);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.architectureStep {
+  color: var(--color-data-signal);
+  font: 700 var(--text-label) / 1 var(--font-technical);
+  font-variant-numeric: tabular-nums;
+}
+
+.architectureLabel {
+  align-self: end;
+  font-weight: 700;
+}
+
+.architectureActive {
+  border-color: var(--color-data-signal);
+}
+
+.architectureVerified {
+  border-color: var(--color-verified-signal);
+}
+
+.architectureVerified .architectureStep {
+  color: var(--color-verified-signal);
+}
+
+.skipLink {
+  position: fixed;
+  inset-block-start: var(--space-3);
+  inset-inline-start: var(--space-3);
+  z-index: 100;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: var(--color-text);
+  clip-path: inset(50%);
+  color: var(--color-canvas);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.skipLink:focus-visible {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  overflow: visible;
+  border: var(--border-strong) solid var(--color-canvas);
+  clip-path: none;
+}

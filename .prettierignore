@@ -1,0 +1,26 @@
+.next/
+build/
+coverage/
+node_modules/
+out/
+playwright-report/
+private-inputs/
+test-results/
+
+# Preserve reviewed inputs and Phase 0 documents byte-for-byte.
+AGENTS.md
+portfolio-codex-implementation-plan.md
+prompt-draft.txt
+skills-lock.json
+.agents/references/
+docs/architecture.md
+docs/content-inventory.md
+docs/decision-log.md
+docs/phase-reports/phase-00.md
+docs/product-brief.md
+docs/project-asset-folder-plan.md
+
+# Existing third-party skills are reviewed inputs. Phase 1's custom skill is checked.
+.agents/skills/*
+!.agents/skills/portfolio-quality-gate/
+!.agents/skills/portfolio-quality-gate/**

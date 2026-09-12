@@ -1,1 +1,25 @@
 private-inputs/
+
+# Dependencies
+/node_modules/
+
+# Next.js output
+/.next/
+/out/
+/build/
+
+# Test output
+/coverage/
+/playwright-report/
+/test-results/
+
+# Local environment files; the reviewed example remains tracked
+.env*
+!.env.example
+
+# Tooling and platform output
+/.vercel/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+.DS_Store
