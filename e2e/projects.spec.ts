@@ -6,6 +6,7 @@ for (const path of [
   "/",
   "/projects",
   "/about",
+  "/resume",
   "/research",
   ...caseStudies.map(({ slug }) => `/projects/${slug}`),
 ]) {
@@ -21,6 +22,11 @@ for (const path of [
     );
     if (path.startsWith("/projects/"))
       await page.getByRole("button", { name: "Engineer detail" }).click();
+    if (path === "/resume") {
+      for (const summary of await page.locator("#experience summary").all()) {
+        await summary.click();
+      }
+    }
     const audit = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
       .analyze();
@@ -96,6 +102,7 @@ test("every public page works without JavaScript", async ({
       "/",
       "/projects",
       "/about",
+      "/resume",
       "/research",
       ...caseStudies.map(({ slug }) => `/projects/${slug}`),
     ]) {

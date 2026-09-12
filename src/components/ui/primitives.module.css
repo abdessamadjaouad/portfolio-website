@@ -137,14 +137,47 @@
 }
 
 .projectCard {
+  position: relative;
   display: grid;
   gap: var(--space-5);
   padding: var(--space-6);
   border: var(--border-thin) solid var(--color-structure);
   border-radius: var(--radius-panel);
-  background: var(--color-surface);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent) 7%, var(--color-surface)),
+    var(--color-surface) 60%
+  );
   color: var(--color-text);
   overflow-wrap: anywhere;
+}
+
+.projectCard:focus-within {
+  border-color: var(--color-data-signal);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .projectCard {
+    transition:
+      transform 350ms var(--motion-ease-direct),
+      border-color 200ms ease;
+  }
+  .buttonLink {
+    transition:
+      transform 220ms var(--motion-ease-direct),
+      color 140ms ease,
+      background-color 140ms ease,
+      border-color 140ms ease;
+  }
+  @media (hover: hover) {
+    .projectCard:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-accent);
+    }
+    .buttonLink:hover {
+      transform: translateY(-2px);
+    }
+  }
 }
 
 .projectCardHeader {

@@ -14,11 +14,11 @@ export default function SocialImage() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        background: "#071015",
-        color: "#f4f7f4",
+        background: "#080b18",
+        color: "#f7f5ff",
         padding: "68px",
         fontFamily: "sans-serif",
-        borderLeft: "12px solid #62d8f0",
+        borderLeft: "12px solid #99e7d5",
       }}
     >
       <div
@@ -26,7 +26,7 @@ export default function SocialImage() {
           display: "flex",
           justifyContent: "space-between",
           fontSize: 24,
-          color: "#62d8f0",
+          color: "#99e7d5",
         }}
       >
         <span>{profile.name}</span>
@@ -36,7 +36,7 @@ export default function SocialImage() {
         <div style={{ fontSize: 88, fontWeight: 700, letterSpacing: "-4px" }}>
           {profile.roles.primary}
         </div>
-        <div style={{ fontSize: 36, color: "#b0bec4" }}>
+        <div style={{ fontSize: 36, color: "#b6a5ff" }}>
           {profile.roles.secondary}
         </div>
       </div>
@@ -46,12 +46,12 @@ export default function SocialImage() {
           justifyContent: "space-between",
           alignItems: "center",
           fontSize: 24,
-          borderTop: "1px solid #47616a",
+          borderTop: "1px solid #46516f",
           paddingTop: 28,
         }}
       >
         <span>Reliable data platforms. Production software.</span>
-        <span style={{ color: "#c1ee72" }}>Portfolio ↗</span>
+        <span style={{ color: "#efb995" }}>Portfolio ↗</span>
       </div>
     </div>,
     size,

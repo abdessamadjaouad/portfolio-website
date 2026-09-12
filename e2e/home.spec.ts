@@ -38,7 +38,7 @@ test("renders the complete recruiter homepage without browser errors", async ({
   await expect(page).toHaveTitle("Abdessamad Jaouad | Data Engineer");
   await expect(page.locator('meta[name="theme-color"]')).toHaveAttribute(
     "content",
-    "#071015",
+    "#080b18",
   );
   await expect(
     page.getByRole("heading", {
@@ -120,6 +120,9 @@ test("supports logical keyboard order and visible focus", async ({ page }) => {
     page
       .getByRole("navigation", { name: "Primary navigation" })
       .getByRole("link", { name: "Projects", exact: true }),
+    page
+      .getByRole("navigation", { name: "Primary navigation" })
+      .getByRole("link", { name: "Résumé", exact: true }),
     page.getByRole("link", { name: "Email", exact: true }).first(),
     page.getByRole("link", { name: "Data Engineer resume", exact: true }),
     page.getByRole("link", { name: "Email Abdessamad", exact: true }).first(),
@@ -289,6 +292,29 @@ test("keeps the full experience visible with reduced motion", async ({
   expect(motionViolations).toEqual([]);
 });
 
+test("3D stack opens with keyboard and stays still with reduced motion", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+  const stack = page.getByRole("figure", { name: "Interactive data stack" });
+  const control = stack.getByLabel("Explore the data stack");
+  await control.focus();
+  await page.keyboard.press("Enter");
+  await expect(stack.locator("details")).toHaveAttribute("open", "");
+  await expect(
+    stack.getByText(/Ingest source data, transform it/),
+  ).toBeVisible();
+  expect(
+    await stack.evaluate(
+      (element) => element.getAnimations({ subtree: true }).length,
+    ),
+  ).toBe(0);
+  await page.keyboard.press("Space");
+  await expect(stack.locator("details")).not.toHaveAttribute("open", "");
+  await expect(control).toBeFocused();
+});
+
 test.describe("without client JavaScript", () => {
   test.use({ javaScriptEnabled: false });
 
@@ -298,6 +324,11 @@ test.describe("without client JavaScript", () => {
     const response = await page.goto("/");
 
     expect(response?.status()).toBe(200);
+    const stack = page.getByRole("figure", { name: "Interactive data stack" });
+    await stack.getByLabel("Explore the data stack").click();
+    await expect(
+      stack.getByText(/Ingest source data, transform it/),
+    ).toBeVisible();
     await expect(
       page.getByRole("heading", {
         level: 1,

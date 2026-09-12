@@ -127,29 +127,51 @@
 
 .hero {
   position: relative;
-  padding-block: clamp(var(--space-8), 10vw, 9rem);
+  padding-block: clamp(var(--space-7), 6vw, 6rem);
   border-block-end: var(--border-thin) solid var(--color-structure);
 }
 
 .hero::before {
   position: absolute;
-  inset-block: 0;
-  inset-inline-start: max(
-    var(--container-gutter),
-    calc((100% - var(--container-wide)) / 2 + var(--container-gutter))
-  );
-  width: var(--border-thin);
-  background: var(--color-structure);
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 90% 10%,
+      color-mix(in srgb, var(--color-accent) 16%, transparent),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 0% 85%,
+      color-mix(in srgb, var(--color-data-signal) 7%, transparent),
+      transparent 40%
+    );
   content: "";
   opacity: 0.55;
   pointer-events: none;
 }
 
 .heroLayout {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 8fr) minmax(17rem, 3fr);
-  gap: clamp(var(--space-7), 8vw, 9rem);
-  align-items: end;
+  grid-template-columns: minmax(0, 1.35fr) minmax(19rem, 0.8fr);
+  gap: clamp(var(--space-7), 5vw, 5rem);
+  align-items: start;
+}
+
+.heroAside {
+  min-width: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+.heroAccent {
+  color: var(--color-data-signal);
+  background: linear-gradient(
+    100deg,
+    var(--color-data-signal),
+    var(--color-accent)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .heroStatement {
@@ -173,7 +195,7 @@
   font-size: var(--text-display);
   font-weight: 700;
   letter-spacing: -0.06em;
-  line-height: 0.94;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
@@ -215,16 +237,25 @@
   display: grid;
   align-self: stretch;
   margin: 0;
-  border-block-start: var(--border-thin) solid var(--color-structure);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: var(--color-structure);
+  border-radius: 1.25rem;
+  overflow: hidden;
 }
 
 .heroFact {
   display: grid;
   gap: var(--space-2);
   align-content: center;
-  min-height: 6.25rem;
-  padding-block: var(--space-4);
-  border-block-end: var(--border-thin) solid var(--color-structure);
+  min-height: 5.5rem;
+  padding: var(--space-4);
+  background: var(--color-canvas);
+}
+
+.heroFact:last-child {
+  grid-column: 1 / -1;
 }
 
 .heroFact dt,
@@ -764,7 +795,7 @@
 
   .heroFact,
   .heroFact:nth-child(even) {
-    padding-inline: 0;
+    padding-inline: var(--space-4);
     border-inline-start: 0;
   }
 

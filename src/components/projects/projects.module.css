@@ -30,6 +30,10 @@
 .heading {
   padding-block: var(--space-7);
   max-width: 70rem;
+  border-bottom: 1px solid var(--color-structure);
+}
+.heading h1 {
+  color: var(--color-accent);
 }
 .eyebrow {
   font: 0.75rem var(--font-technical);
@@ -53,7 +57,11 @@
 .card {
   padding: var(--space-6);
   border: 1px solid var(--color-structure);
-  background: var(--color-surface);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)),
+    var(--color-surface) 65%
+  );
   border-radius: var(--radius-panel);
   display: flex;
   flex-direction: column;
